@@ -1,0 +1,1 @@
+Private Events project from The Odin Project's [curriculum](https://www.theodinproject.com/lessons/associations#project-2-private-events)
