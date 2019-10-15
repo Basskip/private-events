@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= "Logged in as #{User.find(session[:user_id]).name}" if session[:user_id] %>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
