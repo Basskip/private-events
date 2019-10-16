@@ -1,1 +1,16 @@
 <h1> <%= "#{@user.name}'s Page" %> </h1>
+
+<h2>Hosted events</h2>
+<ul>
+    <%= render @user.hosted_events %>
+</ul>
+
+<h2>Upcoming events</h2>
+<ul>
+    <%= render @user.upcoming_events %>
+</ul>
+
+<h2>Previous events</h2>
+<ul>
+    <%= render @user.previous_events %>
+</ul>

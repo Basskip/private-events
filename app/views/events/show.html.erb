@@ -1,0 +1,11 @@
+<h1><%= @event.title %></h1>
+
+<p>Hosted by <%=link_to @event.creator.name, @event.creator %></p>
+<p><%= "Location: #{@event.location}"%></p>
+
+<h2>Attendees</h2>
+<ul>
+    <% @event.users.each do |user| %>
+        <li><%= link_to user.name, user %></li>
+    <% end %>
+</ul>

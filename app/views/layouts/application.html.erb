@@ -10,7 +10,16 @@
   </head>
 
   <body>
-    <%= "Logged in as #{User.find(session[:user_id]).name}" if session[:user_id] %>
+  <span>
+    <% if session[:user_id] %>
+      <%= "Logged in as #{User.find(session[:user_id]).name}"%>
+      <%= link_to "Log out", logout_path, method: :delete %>
+      <%= link_to "New Event", new_event_path %>
+      <% else %>
+      <%= link_to "Sign in", signin_path %>
+    <% end %>
+    <%= link_to "Events", events_path %>
+  </span>
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
